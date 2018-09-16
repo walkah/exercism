@@ -1,2 +1,10 @@
+# exercism
 .solution.json
+
+# node/js
 node_modules/
+
+# python
+*.pyc
+__pycache__
+.pytest_cache
