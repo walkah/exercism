@@ -1,15 +1,7 @@
 class Hamming
-  def self.compute(a, b)
-    if a.length != b.length
-      raise ArgumentError
-    end
+  def self.compute(strand_one, strand_two)
+    raise ArgumentError unless strand_one.length == strand_two.length
 
-    distance = 0
-    0.upto(a.length - 1) do |i|
-      if a[i] != b[i]
-        distance += 1
-      end
-    end
-    distance
+    0.upto(strand_one.length - 1).count {|i| strand_one[i] != strand_two[i] }
   end
 end
