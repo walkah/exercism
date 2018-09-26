@@ -1,7 +1,14 @@
 class Hamming
-  def self.compute(strand_one, strand_two)
-    raise ArgumentError unless strand_one.length == strand_two.length
+  class StrandLengthError < ArgumentError
+    def initialize(msg='Strand lengths are not the same size.')
+      super
+    end
+  end
 
-    0.upto(strand_one.length - 1).count {|i| strand_one[i] != strand_two[i] }
+  def self.compute(strand1, strand2)
+    raise StrandLengthError unless strand1.length == strand2.length
+
+    nucleotide_pairs = strand1.chars.zip(strand2.chars)
+    nucleotide_pairs.count {|n1, n2| n1 != n2}
   end
 end
