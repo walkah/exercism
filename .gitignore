@@ -1,5 +1,6 @@
 # exercism
 .solution.json
+.exercism
 
 # node/js
 node_modules/
