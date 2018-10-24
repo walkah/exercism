@@ -1,14 +1,20 @@
+# Phrase class
 class Phrase
   def initialize(phrase)
-    @phrase = phrase
+    @words = phrase.downcase.scan(/\w+(?:'\w)*/)
   end
 
   def word_count
-    counts = {}
-    @phrase.scan(/\w+(?:'\w)*/).each do |word|
-      word.downcase!
-      counts[word] = counts[word].to_i + 1
-    end
-    counts
+    Hash[word_counts]
+  end
+
+  private
+
+  def word_groups
+    @words.group_by { |word| word }
+  end
+
+  def word_counts
+    word_groups.map { |word, list| [word, list.size] }
   end
 end
