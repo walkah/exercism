@@ -2,6 +2,11 @@
 .solution.json
 .exercism
 
+# haskell
+*.cabal
+.stack-work
+stack.yaml.lock
+
 # node/js
 node_modules/
 
