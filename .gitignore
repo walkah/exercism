@@ -9,6 +9,7 @@ stack.yaml.lock
 
 # node/js
 node_modules/
+package-lock.json
 
 # python
 *.pyc
